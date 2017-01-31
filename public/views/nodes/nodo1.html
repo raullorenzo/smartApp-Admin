@@ -1,0 +1,135 @@
+<div class="animated fadeIn">
+    <br>
+    <h3>CHARIOT.C3526</h3>
+    <br>
+    <hr>
+    <div class="row">
+        <!-- /col-->
+        <div class="col-sm-6 col-lg-3">
+            <div class="card card-inverse card-success">
+                <div class="card-block p-b-0" style="height:200px;" ng-controller="tempCtrl">
+                    <div>
+                        <h4 style="display: inline-block; float: left;" class="m-b-0">T.Actual</h4>
+                        <button style="display: inline-block; float: right;" type="button" class="btn-sm btn-primary" ng-click="chariot26()">GET</button>
+                    </div>
+                    <br>
+                    <br>
+                    <h4 class="m-b-0" ng-bind="result"></h4>
+                    <hr>
+                    <span class="m-b-0" ng-bind="location"></span>
+                </div>
+                <div class="chart-wrapper" style="height:70px;" ng-controller="node1Ctrl">
+                    <canvas class="chart chart-line" chart-data="data" chart-labels="labels" chart-legend="false" chart-series="series" chart-options="options" chart-colors="colors" height="70"></canvas>
+                </div>
+            </div>
+        </div>
+        <!--/col-->
+        <div class="col-sm-6 col-lg-3">
+            <div class="card card-inverse card-danger" ng-controller="node1Ctrl">
+                <div class="card-block p-b-0" style="height:200px;">
+                    <h4 class="m-b-0">T.Máxima</h4>
+                    <br>
+                    <h4 class="m-b-0" ng-bind="max26+' ºC'"></h4>
+                    <hr>
+                    <span class="m-b-0" ng-bind="location"></span>
+                </div>
+                <div class="chart-wrapper" style="height:70px;">
+                    <canvas class="chart chart-line" chart-data="data" chart-labels="labels" chart-legend="false" chart-series="series" chart-options="options" chart-colors="colors" height="70"></canvas>
+                </div>
+            </div>
+        </div>
+        <!--/col-->
+        <div class="col-sm-6 col-lg-3">
+            <div class="card card-inverse card-primary" ng-controller="node1Ctrl">
+                <div class="card-block p-b-0" style="height:200px;">
+                    <h4 class="m-b-0">T.Mínima</h4>
+                    <br>
+                    <h4 class="m-b-0" ng-bind="min26+' ºC'"></h4>
+                    <hr>
+                    <span class="m-b-0" ng-bind="location"></span>
+                </div>
+                <div class="chart-wrapper" style="height:70px;">
+                    <canvas class="chart chart-line" chart-data="data" chart-labels="labels" chart-legend="false" chart-series="series" chart-options="options" chart-colors="colors" height="70"></canvas>
+                </div>
+            </div>
+        </div>
+        <!--/col-->
+        <div class="col-sm-6 col-lg-3">
+            <div class="card card-inverse card-warning" ng-controller="node1Ctrl">
+                <div class="card-block p-b-0" style="height:200px;">
+                    <h4 class="m-b-0">T.Media</h4>
+                    <br>
+                    <h4 class="m-b-0" ng-bind="media26+' ºC'"></h4>
+                    <hr>
+                    <span class="m-b-0" ng-bind="location"></span>
+                </div>
+                <div class="chart-wrapper" style="height:70px;">
+                    <canvas class="chart chart-line" chart-data="data" chart-labels="labels" chart-legend="false" chart-series="series" chart-options="options" chart-colors="colors" height="70"></canvas>
+                </div>
+            </div>
+        </div>
+        <!--/col-->
+    </div>
+    <!--/row-->
+    <div class="card" ng-controller="nodesCtrl">
+        <div class="card-block">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h3 class="card-title m-b-0">Temperaturas chariot.c3526</h3>
+                    <br>
+                    <div class="medium text-muted" ng-bind="'Última actualización: '+today"></div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="btn-toolbar pull-right" role="toolbar" aria-label="Toolbar with button groups">
+                        <div class="btn-group" data-toggle="buttons" aria-label="First group">
+                            <label class="btn btn-outline-secondary" ng-click="verGraf(1)"> 
+                                <input type="radio" name="options" id="option1"> Día
+                            </label>
+                            <label class="btn btn-outline-secondary active" ng-click="verGraf(2)">
+                                <input type="radio" name="options" id="option2" checked> Mes
+                            </label>
+                            <label class="btn btn-outline-secondary" ng-click="verGraf(3)">
+                                <input type="radio" name="options" id="option3"> Año
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="chart-wrapper" style="height:500px;margin-top:40px;">
+                <canvas class="chart chart-line" chart-data="data2" chart-labels="labels2" chart-legend="false" chart-series="series2" chart-click="onClick" chart-options="options" chart-colors="colors" height="300"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-block">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h3 class="card-title m-b-0">Datos chariot.c3526</h3>
+                    <br>
+                </div>
+            </div>
+            <div class="chart-wrapper" ng-controller="TableCtrl">
+                <table class="table table-hover" ng-table="tableParams" show-filter="true" ng-init="tableParams.filter({location:'chariot.c3526'})">
+                    <tr ng-repeat="temp in $data">
+                        <td data-title="'&nbsp;&nbsp;&nbsp;&nbsp;Nº'" >
+                            &nbsp;&nbsp;&nbsp;&nbsp;<a class="nocolor" ng-bind="$index+1"></a><br>
+                        </td>
+                        <td data-title="'&nbsp;&nbsp;&nbsp;&nbsp;Location'">
+                            &nbsp;&nbsp;&nbsp;&nbsp;<a class="nocolor" ng-bind="temp.location"></a><br>
+                        </td>
+                        <td data-title="'&nbsp;&nbsp;&nbsp;&nbsp;Temperature'" sortable="'temperature'"
+                            filter="{ 'temperature': 'text' }">
+                            &nbsp;&nbsp;&nbsp;&nbsp;<a style="color: red" class="nocolor" ng-bind="temp.temperature+' ºC'"></a><br>
+                        </td>
+                        <td data-title="'&nbsp;&nbsp;&nbsp;&nbsp;Data'" sortable="'created'" filter="{ 'created': 'text' }">
+                            &nbsp;&nbsp;&nbsp;&nbsp;<a class="nocolor" ng-bind="temp.created | amDateFormat:'DD.MM.YYYY HH:mm:ss'"></a>
+                        </td>
+                        <td data-title="'&nbsp;&nbsp;&nbsp;&nbsp;Options'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button type="button" class="btn btn-outline-danger" ng-click="delTemp(temp)"><i class="fa fa-trash-o fa-lg m-t-0"></i>&nbsp; Delete</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

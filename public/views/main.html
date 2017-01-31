@@ -1,0 +1,253 @@
+<div class="animated fadeIn">
+    <div class="row">
+        <!-- /col-->
+        <div class="col-sm-6 col-lg-3">
+            <div class="card card-inverse card-success" ng-controller="cardChartCtrl1">
+                <div class="card-block p-b-0">
+                    <h4 class="m-b-0">T.Media</h4>
+                    <br>
+                    <h4 class="m-b-0" ng-bind="media26+' ºC'"></h4>
+                    <br>
+                    <button style="width: 100%" type="button" class="btn btn-success" ng-click="goTo26()">chariot.c3526</button>
+                </div>
+                <div class="chart-wrapper" style="height:70px;">
+                    <canvas class="chart chart-line" chart-data="data" chart-labels="labels" chart-legend="false" chart-series="series" chart-options="options" chart-colors="colors" height="70"></canvas>
+                </div>
+            </div>
+        </div>
+        <!--/col-->
+        <div class="col-sm-6 col-lg-3">
+            <div class="card card-inverse card-primary" ng-controller="cardChartCtrl2">
+                <div class="card-block p-b-0">
+                    <h4 class="m-b-0">T.Media</h4>
+                    <br>
+                    <h4 class="m-b-0" ng-bind="media27+' ºC'"></h4>
+                    <br>
+                    <button style="width: 100%" type="button" class="btn btn-primary" ng-click="goTo27()">chariot.c3527</button>
+                </div>
+                <div class="chart-wrapper" style="height:70px;">
+                    <canvas class="chart chart-line" chart-data="data" chart-labels="labels" chart-legend="false" chart-series="series" chart-options="options" chart-colors="colors" height="70"></canvas>
+                </div>
+            </div>
+        </div>
+        <!--/col-->
+        <div class="col-sm-6 col-lg-3">
+            <div class="card card-inverse card-warning" ng-controller="cardChartCtrl3">
+                <div class="card-block p-b-0">
+                    <h4 class="m-b-0">T.Media</h4>
+                    <br>
+                    <h4 class="m-b-0" ng-bind="media28+' ºC'"></h4>
+                    <br>
+                    <button style="width: 100%" type="button" class="btn btn-warning" ng-click="goTo28()">chariot.c3528</button>
+                </div>
+                <div class="chart-wrapper" style="height:70px;">
+                    <canvas class="chart chart-line" chart-data="data" chart-labels="labels" chart-legend="false" chart-series="series" chart-options="options" chart-colors="colors" height="70"></canvas>
+                </div>
+            </div>
+        </div>
+        <!--/col-->
+        <div class="col-sm-6 col-lg-3">
+            <div class="card card-inverse card-danger" ng-controller="cardChartCtrl4">
+                <div class="card-block p-b-0">
+                    <h4 class="m-b-0">T.Media</h4>
+                    <br>
+                    <h4 class="m-b-0" ng-bind="media29+' ºC'"></h4>
+                    <br>
+                    <button style="width: 100%" type="button" class="btn btn-danger" ng-click="goTo29()">chariot.c3529</button>
+                </div>
+                <div class="chart-wrapper" style="height:70px;">
+                    <canvas class="chart chart-line" chart-data="data" chart-labels="labels" chart-legend="false" chart-series="series" chart-options="options" chart-colors="colors" height="70"></canvas>
+                </div>
+            </div>
+        </div>
+        <!--/col-->
+    </div>
+    <div class="card-columns col-2">
+        <div style="display: inline-block; float: left;" class="card">
+            <div class="card-header">
+                <i class="icon-graph icon-bg"></i>Line Chart
+                <div class="card-actions">
+                    <a href="http://jtblin.github.io/angular-chart.js/">
+                        <small class="text-muted">docs</small>
+                    </a>
+                </div>
+            </div>
+            <div class="card-block" ng-controller="cardChartCtrl1">
+                <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-legend="true" chart-series="series" chart-click="onClick"></canvas>
+            </div>
+        </div>
+        <div style="display: inline-block; float: left;" class="card">
+            <div class="card-header">
+                <i class="icon-graph icon-bg"></i>Bar Chart
+                <div class="card-actions">
+                    <a href="http://jtblin.github.io/angular-chart.js/">
+                        <small class="text-muted">docs</small>
+                    </a>
+                </div>
+            </div>
+            <div class="card-block" ng-controller="cardChartCtrl2">
+                <canvas id="bar" class="chart chart-bar" chart-data="data" chart-labels="labels">
+                </canvas>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                Doughnut Chart
+                <div class="card-actions">
+                    <a href="http://jtblin.github.io/angular-chart.js/">
+                        <small class="text-muted">docs</small>
+                    </a>
+                </div>
+            </div>
+            <div class="card-block" ng-controller="cardChartCtrl3">
+                <canvas id="doughnut" class="chart chart-doughnut" chart-data="data" chart-labels="labels">
+                </canvas>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                Radar Chart
+                <div class="card-actions">
+                    <a href="http://jtblin.github.io/angular-chart.js/">
+                        <small class="text-muted">docs</small>
+                    </a>
+                </div>
+            </div>
+            <div class="card-block" ng-controller="cardChartCtrl4">
+                <canvas id="radar" class="chart chart-radar" chart-data="data" chart-labels="labels">
+                </canvas>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <i class="fa fa-asterisk icon-bg"></i>Pie Chart
+                <div class="card-actions">
+                    <a href="http://jtblin.github.io/angular-chart.js/">
+                        <small class="text-muted">docs</small>
+                    </a>
+                </div>
+            </div>
+            <div class="card-block" ng-controller="cardChartCtrl2">
+                <canvas id="pie" class="chart chart-pie" chart-data="data" chart-labels="labels">
+                </canvas>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                Polar Area Chart
+                <div class="card-actions">
+                    <a href="http://jtblin.github.io/angular-chart.js/">
+                        <small class="text-muted">docs</small>
+                    </a>
+                </div>
+            </div>
+            <div class="card-block" ng-controller="cardChartCtrl4">
+                <canvas id="polar-area" class="chart chart-polar-area" chart-data="data" chart-labels="labels">
+                </canvas>
+            </div>
+        </div>
+    </div>
+    <!--/row-->
+    <div class="card" ng-controller="trafficDemoCtrl">
+        <div class="card-block">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h3 class="card-title m-b-0">Temperaturas de los Nodos</h3><br>
+                    <div class="medium text-muted" ng-bind="'Última actualización: '+today"></div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="btn-toolbar pull-right" role="toolbar" aria-label="Toolbar with button groups">
+                        <div class="btn-group" data-toggle="buttons" aria-label="First group">
+                            <label class="btn btn-outline-secondary" ng-click="verGraf(1)"> 
+                                <input type="radio" name="options" id="option1"> Día
+                            </label>
+                            <label class="btn btn-outline-secondary active" ng-click="verGraf(2)">
+                                <input type="radio" name="options" id="option2" checked> Mes
+                            </label>
+                            <label class="btn btn-outline-secondary" ng-click="verGraf(3)">
+                                <input type="radio" name="options" id="option3"> Año
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="chart-wrapper" style="height:500px;margin-top:40px;">
+                <canvas class="chart chart-line" chart-data="data" chart-labels="labels" chart-legend="false" chart-series="series" chart-click="onClick" chart-options="options" chart-colors="colors" height="300"></canvas>
+            </div>
+        </div>
+        <div class="card-footer">
+        <br>
+            <ul>
+                <li>
+                    <div class="text-muted">Max:{{max26}} | Min:{{min26}}</div><br>
+                    <strong>T.max chariot.c3526</strong>
+                    <progress class="progress progress-xs progress-danger" value="{{max26}}" max="{{maxTot+20}}"></progress>
+                    <strong>T.min chariot.c3526</strong>
+                    <progress class="progress progress-xs progress-info" value="{{min26}}" max="{{maxTot+30}}"></progress>
+                </li>
+                <li class="hidden-xs-down">
+                    <div class="text-muted">Max:{{max27}} | Min:{{min27}}</div><br>
+                    <strong>T.max chariot.c3527</strong>
+                    <progress class="progress progress-xs progress-danger" value="{{max27}}" max="{{maxTot+20}}"></progress>
+                    <strong>T.min chariot.c3527</strong>
+                    <progress class="progress progress-xs progress-info" value="{{min27}}" max="{{maxTot+30}}"></progress>
+                </li>
+                <li>
+                    <div class="text-muted">Max:{{max28}} | Min:{{min28}}</div><br>
+                    <strong>T.max chariot.c3528</strong>
+                    <progress class="progress progress-xs progress-danger" value="{{max28}}" max="{{maxTot+20}}"></progress>
+                    <strong>T.min chariot.c3528</strong>
+                    <progress class="progress progress-xs progress-info" value="{{min28}}" max="{{maxTot+30}}"></progress>
+                </li>
+                <li class="hidden-xs-down">
+                    <div class="text-muted">Max:{{max29}} | Min:{{min29}}</div><br>
+                    <strong>T.max chariot.c3529</strong>
+                    <progress class="progress progress-xs progress-danger" value="{{max29}}" max="{{maxTot+20}}"></progress>
+                    <strong>T.min chariot.c3529</strong>
+                    <progress class="progress progress-xs progress-info" value="{{min29}}" max="{{maxTot+30}}"></progress>
+                </li>
+                <li class="hidden-xs-down">
+                    <div class="text-muted">Max:{{maxTot}} | Min:{{minTot}}</div><br>
+                    <strong>T.max Nodos</strong>
+                    <progress class="progress progress-xs progress-danger" value="{{maxTot}}" max="{{maxTot+20}}"></progress>
+                    <strong>T.min Nodos</strong>
+                    <progress class="progress progress-xs progress-info" value="{{minTot}}" max="{{maxTot+30}}"></progress>
+                </li>
+            </ul>
+            <br><br>
+        </div>
+    </div>
+    <!--/.card-->  
+    <div class="card">
+        <div class="card-block">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h3 class="card-title m-b-0">Datos Nodos</h3>
+                    <br>
+                </div>
+            </div>
+            <div class="chart-wrapper" ng-controller="nodesTableCtrl">
+                <table class="table table-hover" ng-table="tableParams" show-filter="true">
+                    <tr ng-repeat="temp in $data">
+                        <td data-title="'&nbsp;&nbsp;&nbsp;&nbsp;Nº'" >
+                            &nbsp;&nbsp;&nbsp;&nbsp;<a class="nocolor" ng-bind="$index+1"></a><br>
+                        </td>
+                        <td data-title="'&nbsp;&nbsp;&nbsp;&nbsp;Location'" sortable="'location'" filter="{ 'location': 'text' }">
+                            &nbsp;&nbsp;&nbsp;&nbsp;<a class="nocolor" ng-bind="temp.location"></a><br>
+                        </td>
+                        <td data-title="'&nbsp;&nbsp;&nbsp;&nbsp;Temperature'" sortable="'temperature'"
+                            filter="{ 'temperature': 'text' }">
+                            &nbsp;&nbsp;&nbsp;&nbsp;<a style="color: red" class="nocolor" ng-bind="temp.temperature+' ºC'"></a><br>
+                        </td>
+                        <td data-title="'&nbsp;&nbsp;&nbsp;&nbsp;Data'" sortable="'created'" filter="{ 'created': 'text' }">
+                            &nbsp;&nbsp;&nbsp;&nbsp;<a class="nocolor" ng-bind="temp.created | amDateFormat:'DD.MM.YYYY HH:mm:ss'"></a>
+                        </td>
+                        <td data-title="'&nbsp;&nbsp;&nbsp;&nbsp;Options'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button type="button" class="btn btn-outline-danger" ng-click="delTemp(temp)"><i class="fa fa-trash-o fa-lg m-t-0"></i>&nbsp; Delete</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div> 
+</div>

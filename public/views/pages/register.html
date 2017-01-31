@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row">
+        <div vamiddle class="col-md-8 m-x-auto pull-xs-none">
+            <div class="card-group">
+                <div class="card p-a-2">
+                    <form name="form" ng-submit="registro()" role="form">
+                        <div class="card-block">
+                            <h1>Register</h1>
+                            <p class="text-muted">Create your account</p>
+                            <div class="input-group m-b-1">
+                                <span class="input-group-addon"><i class="icon-user"></i></span>
+                                <input type="text" class="form-control" placeholder="Username" ng-model="usuario.login" required>
+                            </div>
+                            <div class="input-group m-b-1">
+                                <span class="input-group-addon"><i class="icon-user"></i></span>
+                                <input type="text" class="form-control" placeholder="Nombre" ng-model="usuario.nombre" required>
+                            </div>
+                            <div class="input-group m-b-1">
+                                <span class="input-group-addon"><i class="icon-user"></i></span>
+                                <input type="text" class="form-control" placeholder="Apellidos" ng-model="usuario.apellidos" required>
+                            </div>
+                            <div class="input-group m-b-1">
+                                <span class="input-group-addon">@</i>
+                                </span>
+                                <input type="text" class="form-control" placeholder="Email" ng-model="usuario.email" required>
+                            </div>
+                            <div class="input-group m-b-1">
+                                <span class="input-group-addon"><i class="icon-lock"></i></span>
+                                <input type="password" class="form-control" placeholder="Password" ng-model="usuario.password" required>
+                            </div>
+                            <button type="button" class="btn btn-block btn-success">Create Account</button>
+                            <button ui-sref="appSimple.login" type="button" class="btn btn-block btn-danger">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card card-inverse card-primary p-y-3">
+                    <div class="card-block text-xs-center">
+                        <div>
+                            <img style="margin-top: 20%" src="../img/coreui-logotyp.png">
+                            <!-- <h2>Sign up</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <button type="button" class="btn btn-primary active m-t-1">Register Now!</button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
